@@ -1,0 +1,131 @@
+@import '../palette';
+@import '../mixins';
+
+.GuitBox__container {
+  align-items: center;
+  background: rgba(238, 114, 0, 1);
+  border-radius: 8px;
+  color: $dark-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 475px) {
+    margin-top: 15rem;
+    width: 100%;
+  }
+
+  &.lightMode {
+    @include lightMode-altBG();
+  }
+}
+
+.guitar__keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+
+  .key {
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-width: 200px;
+    transition: all 0.07s ease;
+    width: 100%;
+
+    @media (max-width: 475px) {
+      font-size: 1rem;
+    }
+
+    kbd {
+      @include button();
+      align-items: center;
+      display: flex;
+      font-size: 0.8em;
+      font-family: inherit;
+      text-transform: uppercase;
+      justify-content: center;
+      padding: 0.25rem;
+      width: 6rem;
+      height: 6rem;
+      @media (max-width: 475px) {
+        width: 100%;
+      }
+    }
+
+    // &.playing {
+    //   border-color: $wesbos;
+    //   border-radius: 4px;
+    //   box-shadow: 0 0 1rem $wesbos;
+    //   transform: translate(4px, 4px);
+    //   img {
+    //     opacity: 1;
+    //   }
+    // }
+  }
+}
+
+.controls {
+  @include formRange();
+  @include noSelect();
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .mode-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    polygon {
+      fill: white;
+      stroke: black;
+    }
+
+    .icon.tri {
+      margin-top: 9px;
+    }
+
+    .icon.active > * {
+      polygon {
+        fill: $alert;
+      }
+    }
+  }
+
+  .controls__buttons {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0 1rem;
+
+    button.play,
+    button.stop {
+      @include button();
+      max-width: 40%;
+      margin: 0.5rem 0.5rem;
+
+      @media (max-width: 475px) {
+        max-width: 100%;
+        margin: 0.5rem 0;
+      }
+
+      // .playing {
+      //   background: black;
+      //   box-shadow: 0 0;
+      //   transform: translate(4px, 4px);
+      // }
+    }
+  }
+}

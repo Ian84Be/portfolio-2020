@@ -7,12 +7,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 4rem;
-
-  @media (max-width: 475px) {
-    margin-top: 12rem;
-    padding-top: 2rem;
-  }
 
   &.lightMode {
     background: $light-bg;
@@ -100,13 +94,13 @@
 
   &.lightMode {
     img {
-      opacity: 0.77;
+      opacity: 1;
     }
   }
   img {
     border-radius: 50%;
     transition: all 0.5s ease;
-    opacity: 0.25;
+    opacity: 0.77;
     width: 150px;
     &:hover {
       transform: scale(1.1) rotate(-5deg);

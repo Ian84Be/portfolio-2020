@@ -1,0 +1,112 @@
+@import '../palette';
+@import '../mixins';
+
+.DrumMachine__container {
+  align-items: center;
+  background: rgba(238, 114, 0, 1);
+  border-radius: 8px;
+  color: $dark-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 475px) {
+    margin-top: 15rem;
+  }
+
+  &.lightMode {
+    @include lightMode-altBG();
+  }
+}
+
+.drum-controls {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  width: 100%;
+  transform: translate(4px, 4px);
+}
+
+button.play,
+button.stop {
+  @include button();
+  max-width: 30%;
+
+  @media (max-width: 475px) {
+    max-width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .playing {
+    background: black;
+    box-shadow: 0 0;
+    transform: translate(4px, 4px);
+  }
+}
+
+.drum-kit__keys {
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0.5rem 0.5rem;
+  justify-items: center;
+  padding: 1rem;
+
+  .key {
+    @include button();
+    align-items: center;
+    border: none;
+    display: flex;
+    font-size: 1.5rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 200px;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 475px) {
+      justify-content: center;
+      font-size: 1rem;
+      width: 100%;
+      kbd {
+        display: none;
+      }
+    }
+
+    kbd {
+      margin: 1rem;
+      padding: 0.25rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      img {
+        opacity: 1;
+      }
+    }
+
+    img {
+      justify-self: end;
+      opacity: 0.8;
+      width: 50%;
+      @media (max-width: 475px) {
+        width: 90%;
+      }
+    }
+  }
+
+  // .playing {
+  //   border-color: $wesbos;
+  //   border-radius: 4px;
+  //   box-shadow: 0 0 1rem $wesbos;
+  //   transform: translate(4px, 4px);
+
+  //   img {
+  //     opacity: 1;
+  //   }
+  // }
+}

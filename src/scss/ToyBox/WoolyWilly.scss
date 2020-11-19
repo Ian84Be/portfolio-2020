@@ -1,0 +1,98 @@
+@import '../palette';
+@import '../mixins';
+
+.WoolyWilly {
+  // @include ComponentWrapper();
+	// @include darkMode-altBG();
+	background: rgba(238, 114, 0, 1);
+	border-radius: 8px;
+  // margin-top: 4rem;
+  &.lightMode {
+		@include lightMode-altBG();
+		border-radius: 8px;
+  }
+  max-width: 500px;
+  @media (max-width: 475px) {
+    // margin-top: 12rem;
+  }
+}
+
+.WoolyWilly__body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  // padding: 1rem;
+  padding-bottom: 0;
+
+  img {
+    border-radius: 1rem;
+    // prettier-ignore
+    box-shadow: 
+			0 0.33rem 0.33rem $light-btn-shadow,
+			0 0.33rem 0.33rem $light-btn-shadow, 
+			0 0.63rem 0.33rem $light-btn-shadow,
+			0 0.93rem 0.33rem $light-btn-shadow,
+			0 1.33rem 0.33rem $light-btn-shadow;
+    display: flex;
+    z-index: 12;
+    margin: 1rem; //this is important to placement, must match canvas
+    @media (max-width: 300px) {
+      max-width: 220px;
+    }
+  }
+
+  canvas#draw {
+    border-radius: 1rem;
+    padding: 0;
+    margin-top: 1rem; //this is important to placement, must match img
+    z-index: 123;
+  }
+
+  .controls {
+    @include noSelect();
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    width: 100%;
+
+    .brushes {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      @media (max-width: 300px) {
+        flex-wrap: wrap;
+      }
+      span {
+        border-radius: 50%;
+        font-size: 3rem;
+        margin: 1rem;
+        .erase {
+          transform: rotate(180deg);
+        }
+        &:hover {
+          background: $alert;
+        }
+      }
+      svg {
+        fill: $alert;
+        stroke: black;
+        stroke-width: 2px;
+        width: 3rem;
+      }
+    }
+
+    input {
+      background-color: black;
+      border-radius: 5rem;
+      cursor: pointer;
+      margin: 1rem;
+      margin-bottom: 0;
+      width: 4rem;
+      height: 4rem;
+      &:hover {
+        background: $alert;
+      }
+    }
+  }
+}

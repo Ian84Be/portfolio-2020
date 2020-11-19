@@ -3,27 +3,26 @@
 @mixin ComponentWrapper {
   align-items: center;
   background: $dark-bg;
-  background: linear-gradient(
-    180deg,
-    rgba(7, 5, 11, 1) 0%,
-    rgba(9, 9, 121, 1) 40%,
-    rgba(238, 114, 0, 1) 100%
-  );
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(7, 5, 11, 1) 0%,
+  //   rgba(9, 9, 121, 1) 40%,
+  //   rgba(238, 114, 0, 1) 100%
+  // );
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
   width: 100%;
 
   // prettier-ignore
-  box-shadow: 
-	 0 0.33rem 0.33rem hsla(29, 100%, 47%, 0.91),
-	 0 0.33rem 0.33rem hsla(29, 100%, 47%, 0.1),
-	 0 0.63rem 0.33rem hsla(29, 100%, 47%, 0.1),
-	 0 0.93rem 0.33rem hsla(29, 100%, 47%, 0.1),
-	 0 1.33rem 0.33rem hsla(29, 100%, 47%, 0.1),
-	 0 2.33rem 0.33rem hsla(29, 100%, 47%, 0.1),
-	 0 3.33rem 0.33rem hsla(29, 100%, 47%, 0.1),
-	 0 4.33rem 0.33rem hsla(29, 100%, 47%, 0.1);
+  // box-shadow: 
+	//  0 0.33rem 0.33rem hsla(29, 100%, 47%, 0.91),
+	//  0 0.33rem 0.33rem hsla(29, 100%, 47%, 0.1),
+	//  0 0.63rem 0.33rem hsla(29, 100%, 47%, 0.1),
+	//  0 0.93rem 0.33rem hsla(29, 100%, 47%, 0.1),
+	//  0 1.33rem 0.33rem hsla(29, 100%, 47%, 0.1),
+	//  0 2.33rem 0.33rem hsla(29, 100%, 47%, 0.1),
+	//  0 3.33rem 0.33rem hsla(29, 100%, 47%, 0.1),
+	//  0 4.33rem 0.33rem hsla(29, 100%, 47%, 0.1);
 
   & > * {
     transition: color 0.5s linear;
@@ -74,15 +73,15 @@
 
 @mixin lightMode-altBG {
   background: $light-bg;
-  border-radius: 0;
-  box-shadow: 0 0.33rem 0.33rem hsla(212, 100%, 78%, 0.91),
-    0 0.33rem 0.33rem hsla(212, 100%, 78%, 0.1),
-    0 0.63rem 0.33rem hsla(212, 100%, 78%, 0.1),
-    0 0.93rem 0.33rem hsla(212, 100%, 78%, 0.1),
-    0 1.33rem 0.33rem hsla(212, 100%, 78%, 0.1),
-    0 2.33rem 0.33rem hsla(212, 100%, 78%, 0.1),
-    0 3.33rem 0.33rem hsla(212, 100%, 78%, 0.1),
-    0 4.33rem 0.33rem hsla(212, 100%, 78%, 0.1);
+	border-radius: 8px;
+  // box-shadow: 0 0.33rem 0.33rem hsla(212, 100%, 78%, 0.91),
+  //   0 0.33rem 0.33rem hsla(212, 100%, 78%, 0.1),
+  //   0 0.63rem 0.33rem hsla(212, 100%, 78%, 0.1),
+  //   0 0.93rem 0.33rem hsla(212, 100%, 78%, 0.1),
+  //   0 1.33rem 0.33rem hsla(212, 100%, 78%, 0.1),
+  //   0 2.33rem 0.33rem hsla(212, 100%, 78%, 0.1),
+  //   0 3.33rem 0.33rem hsla(212, 100%, 78%, 0.1),
+  //   0 4.33rem 0.33rem hsla(212, 100%, 78%, 0.1);
 }
 
 @mixin button {

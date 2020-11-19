@@ -1,10 +1,11 @@
 import React from 'react';
-import githubLight from './assets/img/GitHub-Mark-Light-64px.png';
-import lambdaLogo from './assets/img/Lambda_Logo.png';
-import linkedInLogo from './assets/img/LI-In-Bug.png';
-import profilePic from './assets/img/ian-belknap3.png';
-import './scss/App.scss';
-import './scss/Profile.scss';
+import githubLight from '../assets/img/GitHub-Mark-Light-64px.png';
+// import lambdaLogo from '../assets/img/Lambda_Logo.png';
+import lambdaLogo from '../assets/img/lambda-new.png';
+import linkedInLogo from '../assets/img/LI-In-Bug.png';
+import profilePic from '../assets/img/Ian_Portrait_circle.png';
+import '../scss/App.scss';
+import '../scss/Profile.scss';
 
 const Profile = ({lightMode}) => {
   return (
@@ -14,7 +15,7 @@ const Profile = ({lightMode}) => {
       <div className="Profile__body">
         <section className="Profile__left-side" role="banner">
           <h1>Ian Belknap</h1>
-          <h2>Full Stack Web Developer</h2>
+          <h2>Software Engineer</h2>
 
           <div className="icons">
             <a href="https://lambdaschool.com/">

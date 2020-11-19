@@ -1,5 +1,6 @@
 @import './reset';
 @import './palette';
+@import './mixins';
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap');
 
 * {
@@ -13,7 +14,8 @@ body {
 }
 
 .App {
-  color: $dark-text;
+	color: $dark-text;
+	background: $dark-bg;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 0.04rem;
 
@@ -30,5 +32,71 @@ body {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     padding-bottom: 4rem;
+	}
+	
+}
+
+span.yin-yang {
+	@include noSelect();
+	color: $dark-text;
+	cursor: pointer;
+	font-size: 3rem;
+	margin: 0 1rem;
+	transition: all 0.2s ease;
+
+	&.lightMode {
+    // background: $light-bg;
+    color: $light-text;
   }
+
+	&:hover {
+		transform: rotate(180deg);
+		transition: all 0.2s ease;
+	}
+
+	@media (max-width: 475px) {
+		margin: 0.5rem 0;
+	}
+}
+
+.toyBoxModal {
+	align-items: center;
+  background: rgba(0, 0, 0, 0.808);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+	&.hidden{
+		display: none;
+	}
+}
+
+.toyBoxModal__closeIcon {
+	@include button();
+	font-weight: bold;
+	text-align: center;
+	padding:10px;
+	margin:10px;
+	opacity: 0.5;
+	// width:90%;
+	z-index: 123456;
+
+	&:hover {
+		cursor: pointer;
+		opacity: 1;
+	}
+}
+
+.toyBoxModal__body {
+	// max-width: 800px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 999;
+	overflow: scroll;
 }
